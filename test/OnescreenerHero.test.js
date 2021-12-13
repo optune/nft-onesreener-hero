@@ -133,7 +133,7 @@ contract("OnescreenerHeroToken", (accounts) => {
     });
   });
 
-  contact('change domain', () => {
+  context('change domain', () => {
     it('allowed as owner of token', () => {
 
     })
