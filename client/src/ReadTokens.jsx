@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { MintToken } from "./MintToken";
+import React, { useEffect, useState } from 'react';
+import { MintToken } from './MintToken';
 
 export const ReadTokens = ({ drizzle, drizzleState }) => {
   console.log(drizzle);
@@ -10,7 +10,7 @@ export const ReadTokens = ({ drizzle, drizzleState }) => {
     const contract = drizzle.contracts.OnescreenerHeroToken;
 
     // let drizzle know we want to watch the `getTokens` method
-    const tokensKey = contract.methods["getTokens"].cacheCall();
+    const tokensKey = contract.methods['getTokens'].cacheCall();
 
     // save the `tokensKey` to local component state for later reference
     setTokensKey(tokensKey);
@@ -25,11 +25,11 @@ export const ReadTokens = ({ drizzle, drizzleState }) => {
   return (
     <div>
       <h1>Onescreener Hero Tokens</h1>
-      <div className="flex mt-12">
-        <div className="flex-1">
-          <code>{tokens && JSON.stringify(tokens.value, null, 2)}</code>
+      <div className='flex mt-12'>
+        <div className='flex-1'>
+          <code> {tokens && JSON.stringify(tokens.value, null, 2)}</code>
         </div>
-        <div className="flex-auto">
+        <div className='flex-auto'>
           <MintToken drizzle={drizzle} drizzleState={drizzleState} />
         </div>
       </div>

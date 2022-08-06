@@ -143,11 +143,7 @@ contract ERC721Payable is Context, ERC165, IERC721Metadata {
     /**
      * @dev See {IERC721-approve}.
      */
-    function approve(address to, uint256 tokenId)
-        public
-        virtual
-        override
-    {
+    function approve(address to, uint256 tokenId) public virtual override {
         address owner = ERC721Payable.ownerOf(tokenId);
         require(to != owner, "ERC721: approval to current owner");
         require(_msgSender() == owner, "ERC721: approve caller is not owner");
